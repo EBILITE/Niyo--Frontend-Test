@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="allarts" element={<AllArts />} />
+        <Route path="single/:id" element={<SingleArt />} />
       </Routes>
     </Router>
   );

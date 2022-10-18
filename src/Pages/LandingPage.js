@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Hero from "../components/Hero/Hero";
 
 const LandingPage = () => {
   return (
-    <div>LandingPage</div>
-  )
-}
+    <div>
+      <Hero />
+    </div>
+  );
+};
 
-export default LandingPage
+export default LandingPage;

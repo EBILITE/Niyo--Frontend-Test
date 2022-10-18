@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Logo from "../../assests/images/Logo.svg";
 import { NavData } from "../../utils/NavbarData";
-// import Button from "../Button/Button";
+import Button from "../Button/Button";
 
 const Navbar = () => {
   return (
@@ -13,8 +13,8 @@ const Navbar = () => {
           {NavData.map((items) => {
             return <p key={items.id}>{items.name}</p>;
           })}
-          {/* <Button text="Login" link="/" /> */}
-          {/* <Button text="Explore Art" link="/allarts" /> */}
+          <Button text="Login" link="/" />
+          <Button text="Explore Art" link="/allarts" />
         </div>
       </div>
     </Wrapper>

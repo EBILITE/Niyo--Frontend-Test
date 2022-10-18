@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import AllArts from "./Pages/AllArts/AllArts";
 import LandingPage from "./Pages/LandingPage";
-
+import SingleArt from "./Pages/singleArt";
 
 function App() {
   return (

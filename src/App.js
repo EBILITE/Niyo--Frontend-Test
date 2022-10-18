@@ -1,9 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import LandingPage from "./Pages/LandingPage";
 
 
 function App() {
   return (
-    <h1>Niyo Taask</h1>
-     
+    <Router>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+    </Router>
   );
 }
 

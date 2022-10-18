@@ -30,3 +30,15 @@ API DOC:
 
 User Interface link:
 [Figma link](https://www.figma.com/file/tV97GXZ3qhE5fu2g5YhuMa/UI-for-Developers?node-id=10%3A55)
+
+
+# Dependencies Installed For the Task
+
+1. Redux Tookit
+2. Normalize.css
+3. styled Components
+4. React Icons
+5. Styled Components
+6. React Router
+
+

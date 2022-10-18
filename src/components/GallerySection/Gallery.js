@@ -10,7 +10,6 @@ import Button from "../Button/Button";
 
 const url = "https://api.artic.edu/api/v1/artworks";
 
-// const searchUrl = "https://api.artic.edu/api/v1/artworks/search?q=king";
 
 const Gallery = () => {
   const { artItem, isLoading } = useSelector((store) => store.art);

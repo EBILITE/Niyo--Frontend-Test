@@ -25,6 +25,7 @@ const Gallery = () => {
 
   useEffect(() => {
     dispatch(getArtItems(url));
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

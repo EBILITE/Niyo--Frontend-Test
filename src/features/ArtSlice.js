@@ -2,6 +2,8 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 // const url = "https://api.artic.edu/api/v1/artworks";
 
+// ==================================Function to fetch the Api and store it in the initial States =======================
+
 export const getArtItems = createAsyncThunk("art/getArtItems", async (url) => {
   try {
     const resp = await fetch(url);

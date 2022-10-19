@@ -14,6 +14,7 @@ const GalleryItems = ({
 }) => {
   const url = `https://www.artic.edu/iiif/2/${image_id}/full/843,/0/default.jpg`;
   return (
+    // ==========Infromation being Mapped on.
     <Wrapper>
       <Link to={`/single/${id}`} className="ArtWrapper">
         <div className="ArtImg">

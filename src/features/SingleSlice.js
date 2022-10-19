@@ -1,5 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
+// ==================Single item Api fetching Logic
+
 export const singleArtItems = createAsyncThunk(
   "singleArt/singleArtItems",
   async (url) => {

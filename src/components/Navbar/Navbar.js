@@ -14,6 +14,7 @@ const Navbar = () => {
           <BiMenu />
         </div>
         <div className="NavData-Flex">
+          {/* =============Information bring mapped on the navbar from the NavData============ */}
           {NavData.map((items) => {
             return <p key={items.id}>{items.name}</p>;
           })}

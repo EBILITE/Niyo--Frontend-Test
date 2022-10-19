@@ -16,6 +16,7 @@ const Gallery = () => {
 
   const [newSearch, setNewSearch] = useState("");
 
+  // ====Fetching the url for the search input
   const fetchData = () => {
     const newUrl = `${url}/search?q=${newSearch}`;
     dispatch(getArtItems(newUrl));
@@ -26,6 +27,7 @@ const Gallery = () => {
     // eslint-disable-next-line
   }, []);
 
+    // ====Loader component
   if (isLoading) {
     return <div className="loading loading-center"></div>;
   }
@@ -36,6 +38,7 @@ const Gallery = () => {
         <div className="ArtHeadline">
           <h2>Art in the collection</h2>
 
+          {/*  =============Search Input container============= */}
           <div className="Search">
             <FaSearch onClick={fetchData} />
             <input
@@ -50,8 +53,10 @@ const Gallery = () => {
           Browse a curated selection of art around the world, including museum
           exhibitions, gallery openings, upcoming and many more
         </p>
+        {/* ===========================Mapping of infromation gotte from the store to display */}
         <div className="ArtGalleryContainer">
           {artItem.slice(0, 6).map((items) => {
+            // =============GalleryItems COntaines the structure of the infromation being mapped to the gallery components
             return <GalleryItems key={items.id} {...items} />;
           })}
         </div>

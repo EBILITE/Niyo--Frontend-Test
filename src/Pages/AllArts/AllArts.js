@@ -8,10 +8,13 @@ import { getArtItems } from "../../features/ArtSlice";
 // import backIcon from "../../assests/images/VectorBackButton.svg";
 import { BiArrowBack } from "react-icons/bi";
 
-const url = "https://api.artic.edu/api/v1/artworks";
+const url = "https://api.artic.edu/api/v1/artworks";// Api
 const AllArts = () => {
+
+  // Geting information from the Api
   const { artItem, isLoading } = useSelector((store) => store.art);
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getArtItems(url));
   }, [dispatch]);
@@ -26,6 +29,7 @@ const AllArts = () => {
           <BiArrowBack />
           <p>Back</p>
         </Link>
+        {/* ===========ArtItem being mapped on  */}
         <div className="AllArtsCon">
           {artItem.map((items) => {
             return <GalleryItems key={items.id} {...items} />;

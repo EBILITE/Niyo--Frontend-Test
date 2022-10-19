@@ -16,9 +16,9 @@ import Gallery from "../components/GallerySection/Gallery";
 
 test("Search inpute working", () => {
   render(
-    <Router>
+    
       <Gallery />
-    </Router>
+    
   );
   userEvent.type(screen.getByPlaceholderText(/Search/i));
 });

@@ -8,12 +8,14 @@ import { BiArrowBack } from "react-icons/bi";
 import { FiShare2 } from "react-icons/fi";
 import Button from "../components/Button/Button";
 
+//  url for the Api
 const url1 = "https://api.artic.edu/api/v1/artworks";
 
 const SingleArt = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
+  // ========== Fetching the infoemation needed from the store
   const { singleItem } = useSelector((store) => store.singleArt);
 
   useEffect(() => {
@@ -21,8 +23,13 @@ const SingleArt = () => {
     // eslint-disable-next-line
   }, []);
 
+  // Destructured the information gotten form the API
+
   const { title, image_id, thumbnail } = singleItem;
+
+  // =============== Url to fetch Image =================
   const url = `https://www.artic.edu/iiif/2/${image_id}/full/843,/0/default.jpg`;
+
   return (
     <Wrapper>
       <div className="singleItemContainer">
@@ -146,8 +153,8 @@ const Wrapper = styled.div`
     }
   }
   @media (min-width: 320px) and (max-width: 480px) {
-    p{
-      font-size: 12px
+    p {
+      font-size: 12px;
     }
     .detail {
       display: flex;

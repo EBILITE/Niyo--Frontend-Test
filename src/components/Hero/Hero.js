@@ -6,6 +6,7 @@ import Button from "../Button/Button";
 const Hero = () => {
   return (
     <Wrapper>
+      {/* ===============Infromation Contained in the Hero Page============== */}
       <div className="HeroWrapper">
         <div className="HeroText">
           <h2>

@@ -22,9 +22,7 @@ const Error = () => {
 export default Error;
 
 const Wrapper = styled.div`
-  /* border: 2px solid white; */
   margin: 0 auto;
-  /* height: 100vh; */
   margin-top: 2rem;
   .Error {
     /* border: 2px solid blue; */

@@ -113,8 +113,69 @@ const Wrapper = styled.div`
   .sec2 {
     /* border: 2px solid white; */
     position: sticky;
-    /* top: 10px; */
-    /* right: 880px; */
     left: 10px;
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    .detail {
+      display: flex;
+      flex-direction: column;
+    }
+    .imageCon {
+      width: 400px;
+      height: 500px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 200px;
+        border-bottom-right-radius: 200px;
+      }
+    }
+    .button {
+      margin-top: -2rem;
+      margin-right: 20px;
+    }
+    .sec1 {
+      position: relative;
+      top: 55px;
+      left: -100px;
+    }
+    .sec2 {
+      /* border: 2px solid white; */
+      position: sticky;
+      left: 10px;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    p{
+      font-size: 12px
+    }
+    .detail {
+      display: flex;
+      flex-direction: column;
+    }
+    .imageCon {
+      width: 300px;
+      height: 400px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 200px;
+        border-bottom-right-radius: 200px;
+      }
+    }
+    .button {
+      margin-top: -2rem;
+      margin-right: 20px;
+    }
+    .sec1 {
+      position: relative;
+      top: 55px;
+      left: -60px;
+    }
+    .sec2 {
+      /* border: 2px solid white; */
+      position: sticky;
+      left: 10px;
+    }
   }
 `;

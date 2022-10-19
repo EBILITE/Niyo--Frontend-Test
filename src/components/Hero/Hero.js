@@ -20,7 +20,7 @@ const Hero = () => {
 
           <div className="StarContainer">
             <Button text="Explore Arts" link="/allarts" />
-            <img src={Star} alt="" />
+            <img src={Star} alt="" className="star" />
           </div>
         </div>
 
@@ -37,6 +37,7 @@ export default Hero;
 const Wrapper = styled.div`
   /* border: 2px solid white; */
   height: calc(100vh - 5rem);
+  margin: 0 auto;
 
   .HeroWrapper {
     /* border: 2px solid yellow; */
@@ -100,5 +101,86 @@ const Wrapper = styled.div`
   }
   .sec1 {
     top: 55px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    /* border: 2px solid white; */
+    margin: 0 auto;
+
+    .HeroWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 1rem;
+    }
+    .ImageContainer,
+    .star {
+      visibility: hidden;
+    }
+    .HeroText {
+      /* border: 2px solid white; */
+      width: 100%;
+      height: 100%;
+
+      h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 72px;
+        color: white;
+        span {
+          color: #fbaf00;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .StarContainer {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        /* justify-content: space-between; */
+      }
+    }
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin: 0 auto;
+
+    .HeroWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 1rem;
+    }
+    .ImageContainer,
+    .star {
+      visibility: hidden;
+    }
+    .HeroText {
+      /* border: 2px solid white; */
+      width: 100%;
+      height: 100%;
+
+      h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 72px;
+        color: white;
+        span {
+          color: #fbaf00;
+        }
+      }
+      p {
+        font-weight: 400;
+        font-size: 15px;
+      }
+      .StarContainer {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 `;

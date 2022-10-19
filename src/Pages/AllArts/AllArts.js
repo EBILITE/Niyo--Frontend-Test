@@ -69,4 +69,11 @@ const Wrapper = styled.div`
       color: white;
     }
   }
+  @media (min-width: 481px) and (max-width: 767px) {
+    .AllArtsCon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;

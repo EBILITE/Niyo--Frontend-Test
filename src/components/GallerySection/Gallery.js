@@ -10,7 +10,6 @@ import Button from "../Button/Button";
 
 const url = "https://api.artic.edu/api/v1/artworks";
 
-
 const Gallery = () => {
   const { artItem, isLoading } = useSelector((store) => store.art);
   const dispatch = useDispatch();
@@ -143,5 +142,56 @@ const Wrapper = styled.div`
   }
   .sec1 {
     top: 55px;
+  }
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    .Gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      p {
+        font-size: 15px;
+      }
+    }
+    .ArtHeadline {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      h2 {
+        font-size: 40px;
+      }
+    }
+    .ArtGalleryContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin-top: 7rem;
+    .Gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 2rem;
+      p {
+        font-size: 15px;
+      }
+    }
+    .ArtHeadline {
+      /* margin-top: 2rem; */
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      h2 {
+        font-size: 30px;
+      }
+    }
+    .ArtGalleryContainer {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;

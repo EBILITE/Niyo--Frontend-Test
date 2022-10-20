@@ -7,8 +7,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const getArtItems = createAsyncThunk("art/getArtItems", async (url) => {
   try {
     const resp = await fetch(url);
-    return await resp.json();
+    return resp.json();
   } catch (err) {
+    console.log("err");
     return console.log(err);
   }
 });
@@ -22,19 +23,20 @@ const ArtSlice = createSlice({
   name: "art",
   initialState,
 
-  extraReducers: {
-    [getArtItems.pending]: (state) => {
+  extraReducers(builder) {
+    builder.addCase(getArtItems.pending, (state) => {
       state.isLoading = true;
-    },
-    [getArtItems.fulfilled]: (state, action) => {
+    });
+    builder.addCase(getArtItems.fulfilled, (state, action) => {
+      console.log("fulfilled data check ");
       const { data } = action.payload;
-      console.log(data);
       state.isLoading = false;
       state.artItem = data;
-    },
-    [getArtItems.rejected]: (state) => {
+    });
+    builder.addCase(getArtItems.rejected, (state) => {
+      console.log("rejected");
       state.isLoading = false;
-    },
+    });
   },
 });
 

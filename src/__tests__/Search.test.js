@@ -1,33 +1,36 @@
-import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import LandingPage from "../Pages/LandingPage";
 import Gallery from "../components/GallerySection/Gallery";
+import { render, screen } from "../testUtil";
+import { setupServer } from "msw/node";
+import { rest } from "msw";
 
-// test("is button working", () => {
-//   render(
-//     <Router>
-//       <LandingPage />
-//     </Router>
-//   );
-//   expect(screen.getByRole("button", { name: /Explore More/i }));
-// });
+const server = setupServer(
+  rest.get("https://api.artic.edu/api/v1/artworks", (req, res, ctx) => {
+    console.log("caught request for mocking");
+    throw new Error("asdfadf asdfadf");
+    return res(ctx.delay(1500), ctx.status(200), ctx.json([{ name: "" }]));
+  })
+);
 
-test("Search inpute working", () => {
-  render(
-    
-      <Gallery />
-    
-  );
-  userEvent.type(screen.getByPlaceholderText(/Search/i));
+beforeAll(() => {
+  server.listen({ onUnhandledRequest: "warn" });
 });
 
-// import { render, screen } from '@testing-library/react';
-// import App from './App';
+afterEach(() => {
+  server.resetHandlers();
+});
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+afterAll(() => {
+  server.close();
+});
+
+describe("search suite check", () => {
+  it("Search input working", async () => {
+    // searchGallary();
+    render(<Gallery />);
+    // userEvent.type(screen.getByPlaceholderText(/Search/i));
+    expect(screen.getByTestId("gallary__search")).toBeInTheDocument();
+  });
+});

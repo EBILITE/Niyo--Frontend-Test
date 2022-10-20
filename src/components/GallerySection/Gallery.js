@@ -23,14 +23,17 @@ const Gallery = () => {
   };
 
   useEffect(() => {
+    console.log("dispatching ");
     dispatch(getArtItems(url));
     // eslint-disable-next-line
   }, []);
 
-    // ====Loader component
-  if (isLoading) {
-    return <div className="loading loading-center"></div>;
-  }
+  console.log("in the gallary", isLoading);
+
+  // ====Loader component
+  // if (isLoading) {
+  //   return <div className="loading loading-center"></div>;
+  // }
 
   return (
     <Wrapper>
@@ -42,6 +45,7 @@ const Gallery = () => {
           <div className="Search">
             <FaSearch onClick={fetchData} />
             <input
+              data-testid="gallary__search"
               placeholder="Search"
               type="text"
               value={newSearch}
